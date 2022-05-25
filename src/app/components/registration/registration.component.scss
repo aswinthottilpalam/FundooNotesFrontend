@@ -1,0 +1,68 @@
+
+.emailValidation {
+    color: #5f6368; 
+    font-size: 12px; 
+}
+.signInInstead {
+    text-decoration: none; 
+    color: var(--gm-colortextbutton-ink-color,#1a73e8);
+    font-weight: 500;
+}
+.signInInstead:hover {color: #174ea6;}
+.nextBtn {
+    background-color: #1a73e8;
+    color: #fff !important;
+    float: right;
+}
+.nextBtn:hover {
+    box-shadow: 0 1px 2px 0 var(--gm-fillbutton-keyshadow-color,rgba(60,64,67,.3)),0 1px 3px 1px var(--gm-fillbutton-ambientshadow-color,rgba(60,64,67,.15));
+    cursor: pointer;
+}
+.firstName, .lastName, .userName, .password {cursor: pointer;}
+.fundooReg h4 {
+    color: #202124;
+    font-size: 24px;
+    font-weight: 400;
+}
+.fundooReg h3 {
+    font-size: 28px;
+    font-weight: 500;
+    font-family: inherit;
+}
+.fundooReg h5 a {
+    color: #1a73e8;
+    font-weight: 500;
+    font-size: 16px;
+    font-family: inherit;
+    text-decoration: none;
+    line-height: 50px;
+}
+.passwordHint p {margin-top: -16px;}
+.regRightSection p{
+    color: #202124;
+    font-size: 16px;
+    font-weight: 300;
+    font-family: inherit;
+    text-align: center;
+}
+
+.nextBtnSection {
+    margin-top: 40px;
+}
+
+.mat-checkbox-checked.mat-accent .mat-checkbox-background,
+.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+  background-color: #1a73e8;
+}
+
+.registration {
+    border: 1px solid #d5d1d1;
+    padding: 50px;
+    margin: 50px;
+    border-radius: 10px;
+}
+.regRightSection img {
+    width: 90%;
+    margin: auto;
+    display: block;
+}

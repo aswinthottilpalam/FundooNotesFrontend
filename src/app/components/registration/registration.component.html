@@ -1,0 +1,66 @@
+<div fxFlex=100 fxLayout="column" fxLayoutAlign="center center">
+  <div fxLayout="row" fxLayoutAlign="center center" class="registration">
+    <div class="fundooReg">
+      <h3>
+        <span style="color:rgb(66, 133, 244)">F</span>
+        <span style="color: rgb(234, 67, 53)">u</span>
+        <span style="color:rgb(251, 188, 5)">n</span>
+        <span style="color:rgb(66, 133, 244)">d</span>
+        <span style="color:rgb(52, 168, 83)">o</span>
+        <span style="color:rgb(234, 67, 53)">o</span>
+      </h3>
+      <h4>Create your Fundoo Account</h4>
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <div class="nameBox" fxLayoutGap="20px">
+          <mat-form-field appearance="outline" class="firstName">
+            <mat-label>First Name</mat-label>
+            <input matInput formControlName="firstName" placeholder=" ">
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="lastName">
+            <mat-label>Last Name</mat-label>
+            <input matInput formControlName="lastName" placeholder=" ">
+          </mat-form-field>
+        </div>
+
+        <div class="emailTextbox">
+          <mat-form-field appearance="outline" class="userName" fxFlex=100>
+            <mat-label>Email</mat-label>
+            <input matInput formControlName="email" placeholder=" ">
+            <mat-hint>You can use letters, numbers & periods</mat-hint>
+          </mat-form-field>
+        </div>
+        <h5> <a href="#">Use my current email address instead</a></h5>
+
+        <div class="nameBox" fxLayoutGap="20px">
+          <mat-form-field appearance="outline" class="password">
+            <mat-label>Password</mat-label>
+            <input matInput formControlName="password" placeholder=" ">
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="password">
+            <mat-label>Confirm</mat-label>
+            <input matInput formControlName="confirmPassword" placeholder=" ">
+          </mat-form-field>
+        </div>
+        <mat-hint class="passwordHint">
+          <p> Use 8 or more characters with a mix of letters, numbers & symbols</p>
+        </mat-hint>
+
+        <section class="example-section">
+          <mat-checkbox class="example-margin">Show Password</mat-checkbox>
+        </section>
+
+        <div class="nextBtnSection">
+          <a href="#" class="signInInstead" routerLink="/login"> Sign in instead </a>
+          <button mat-button color="primary" class="nextBtn">Next</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="regRightSection">
+      <img src="https://ssl.gstatic.com/accounts/signup/glif/account.svg">
+      <p>One account. All of FundooNotes <br> working for you.</p>
+    </div>
+  </div>
+</div>
