@@ -37,7 +37,7 @@
     text-decoration: none;
     line-height: 50px;
 }
-.passwordHint p {margin-top: -16px;}
+.passwordHint p {margin-top: -10px;}
 .regRightSection p{
     color: #202124;
     font-size: 16px;
@@ -50,10 +50,11 @@
     margin-top: 40px;
 }
 
-.mat-checkbox-checked.mat-accent .mat-checkbox-background,
-.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
-  background-color: #1a73e8;
-}
+// .mat-checkbox-checked.mat-accent .mat-checkbox-background,
+// .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+//   background-color: #1a73e8 !important;
+// }
+
 
 .registration {
     border: 1px solid #d5d1d1;
@@ -65,4 +66,26 @@
     width: 90%;
     margin: auto;
     display: block;
+}
+
+
+@media only screen and (max-width: 992px) {
+    .registration {
+        padding: 30px;
+        margin: 30px;
+    }
+    .fundooReg h5 a {
+        font-size: 14px;
+        line-height: 16px;
+    }
+    .registration .nameBox .mat-form-field {margin-bottom: 0 !important;}
+}
+@media only screen and (max-width: 600px) {
+    .fundooReg h4 { font-size: 20px; }
+    .registration {
+        border: none;
+        padding: 28px;
+        margin: 0px;
+        border-radius: 0px;
+    }
 }

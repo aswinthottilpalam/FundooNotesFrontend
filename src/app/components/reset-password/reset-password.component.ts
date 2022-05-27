@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UserserviceService } from 'src/app/services/userService/userservice.service';
 
 
 @Component({
@@ -9,20 +10,35 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class ResetPasswordComponent implements OnInit {
 
-  registerForm!: FormGroup;
+  resetPasswordForm!: FormGroup;
   submitted = false;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private user: UserserviceService) { }
 
   ngOnInit() {
-    this.registerForm = this.formBuilder.group({
-      password: ['', [Validators.required, Validators.email]],
-      confirmPassword: ['', [Validators.required, Validators.email]]
+    this.resetPasswordForm = this.formBuilder.group({
+      password: ['', [Validators.required, Validators.minLength(6)]],
+      confirmPassword: ['', [Validators.required, Validators.minLength(6)]]
     });
   }
 
   onSubmit(){
-    console.log(this.registerForm.value);
+    // console.log(this.registerForm.value);
+    this.submitted = true;
+
+    if(this.resetPasswordForm.valid){
+      let reqData = {
+        password: this.resetPasswordForm.value.password,
+        confirmPassword: this.resetPasswordForm.value.confirmPassword,
+      }
+
+      this.user.login(reqData).subscribe((response: any) =>{
+        console.log(response);
+      }, error => {
+        console.log(error);
+      })
+
+    }
   }
 
 }
