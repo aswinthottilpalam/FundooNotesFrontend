@@ -41,6 +41,7 @@
     text-align: center;
 }
 
+.forgotMail {padding-top: 10px;}
 .forgotMail a {
     font-size: 14px;
     color: #1a73e8;
@@ -63,4 +64,19 @@
 }
 .fundooLogin .nextBtnSection {
     padding-top: 40px;
+}
+
+@media only screen and (max-width: 992px) {
+    .registration {
+        padding: 30px;
+        margin: 30px;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .registration {
+        border: none;
+        padding: 28px;
+        margin: 0px;
+        border-radius: 0px;
+    }
 }
