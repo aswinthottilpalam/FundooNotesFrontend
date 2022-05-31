@@ -49,14 +49,14 @@ export class UserserviceService {
 
 
         //  Reset password section api integration
-        resetPassword(reqdata: any){
-          console.log(reqdata);
+        resetPassword(reqdata: any,  token: any){
           let header = {
             headers:new HttpHeaders({
              'Content-Type': 'application/json-patch+json',
+             'Authorization':  'Bearer ' + token
             })
           }
-          return this.httpService.postService(`User/ChangePassword`, reqdata, false, header)
+          return this.httpService.putService('User/ChangePassword', reqdata, true, header)
         }
 
 }

@@ -1,0 +1,55 @@
+<div class="example-container" [class.example-is-mobile]="mobileQuery.matches" >
+    <mat-toolbar color="primary" class="example-toolbar header">
+      <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+      <img src="../../../assets/fileImg.png" class="fileImg">
+      <h1 fxFlex=10>
+        <span style="color:rgb(66, 133, 244)">F</span>
+        <span style="color: rgb(234, 67, 53)">u</span>
+        <span style="color:rgb(251, 188, 5)">n</span>
+        <span style="color:rgb(66, 133, 244)">d</span>
+        <span style="color:rgb(52, 168, 83)">o</span>
+        <span style="color:rgb(234, 67, 53)">o</span>
+      </h1>
+
+      <div fxFlex=50 class="searchIconBox">
+        <a ><mat-icon class="headerIcon">search</mat-icon></a>
+        <input type="text" placeholder="Search" class="searchbox">
+        <!-- <a ><mat-icon class="closeIcon">close</mat-icon></a> -->
+      </div>
+
+      <div fxFlex=10 class="refreshiconsection">
+        <a ><mat-icon class="headerIcon refreshIcon greyBg">refresh</mat-icon></a>
+        <a ><mat-icon class="headerIcon viewStreamIcon greyBg">view_stream</mat-icon></a>
+        <a > <mat-icon class="headerIcon settingdicon greyBg">settings</mat-icon></a>
+      </div>
+      
+      <div flFlex=10 class="dpSection">
+        <a ><mat-icon class="headerIcon appsIcon greyBg">apps</mat-icon></a>
+        <div class="dpImg">
+            <img src="../../../assets/avatar.jpg" >
+        </div>
+      </div>
+
+    </mat-toolbar>
+  
+    <mat-sidenav-container class="example-sidenav-container"
+                           [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+      <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
+                   [fixedInViewport]="mobileQuery.matches" fixedTopGap="56"  style="border:none !important;">
+        <mat-nav-list class="sideNavList">
+          <a mat-list-item routerLink="." > <mat-icon>lightbulb_outline</mat-icon> Notes</a>
+          <a mat-list-item routerLink="." > <mat-icon>notifications_none</mat-icon> Reminders</a>
+          <a mat-list-item routerLink="." > <mat-icon>edit</mat-icon> Edit labels</a>
+          <a mat-list-item routerLink="." > <mat-icon>archive</mat-icon> Archive</a>
+          <a mat-list-item routerLink="." > <mat-icon>delete_outline</mat-icon> Bin</a>
+        </mat-nav-list>
+      </mat-sidenav>
+  
+      <mat-sidenav-content>
+        <p>  </p>
+      </mat-sidenav-content>
+
+    </mat-sidenav-container>
+  </div>
+  
+  
