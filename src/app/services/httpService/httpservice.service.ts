@@ -13,4 +13,9 @@ export class HttpserviceService {
     return this.httpClient.post(this.baseurl+url,reqdata,token && httpOptions); 
   }
 
+  putService(url: string, reqData: any, token: boolean = false, headers: any) {
+    console.log(reqData)
+    return this.httpClient.put(this.baseurl+url, reqData, token && headers)
+  }
+
 }

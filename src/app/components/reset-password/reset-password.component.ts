@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 import { UserserviceService } from 'src/app/services/userService/userservice.service';
 
 
@@ -12,14 +13,25 @@ export class ResetPasswordComponent implements OnInit {
 
   resetPasswordForm!: FormGroup;
   submitted = false;
+  token: any
 
-  constructor(private formBuilder: FormBuilder, private user: UserserviceService) { }
+  constructor(private formBuilder: FormBuilder, private user: UserserviceService, private activatedRoute:ActivatedRoute) { }
 
-  ngOnInit() {
+  // ngOnInit() {
+  //   this.resetPasswordForm = this.formBuilder.group({
+  //     password: ['', [Validators.required, Validators.minLength(6)]],
+  //     confirmPassword: ['', [Validators.required, Validators.minLength(6)]]
+  //   });
+  // }
+
+  ngOnInit(): void {
+   
+    this.token = this.activatedRoute.snapshot.paramMap.get('token')
     this.resetPasswordForm = this.formBuilder.group({
       password: ['', [Validators.required, Validators.minLength(6)]],
-      confirmPassword: ['', [Validators.required, Validators.minLength(6)]]
+      confirmPassword: ['', Validators.required]
     });
+
   }
 
   onSubmit(){
@@ -31,8 +43,8 @@ export class ResetPasswordComponent implements OnInit {
         password: this.resetPasswordForm.value.password,
         confirmPassword: this.resetPasswordForm.value.confirmPassword,
       }
-
-      this.user.login(reqData).subscribe((response: any) =>{
+      console.log(this.token);
+      this.user.resetPassword(reqData, this.token).subscribe((response: any) =>{
         console.log(response);
       }, error => {
         console.log(error);
