@@ -5,13 +5,22 @@ import { RegistrationComponent } from './components/registration/registration.co
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { GetallnotesComponent } from './components/getallnotes/getallnotes.component';
+import { GetAlltrashnoteComponent } from './components/get-alltrashnote/get-alltrashnote.component';
+import { GetAllarchiveComponent } from './components/get-allarchive/get-allarchive.component';
 
 const routes: Routes = [
   {path: 'login',component:LoginComponent},
   {path: 'registration',component:RegistrationComponent},
   {path: 'forgot-password',component:ForgotPasswordComponent},
   {path: 'reset-password/:token',component:ResetPasswordComponent},
-  {path: 'dashboard',component:DashboardComponent}
+  {path: 'dashboard',component:DashboardComponent, 
+    children: [
+      {path: 'notes', component:GetallnotesComponent},
+      {path: 'trash', component:GetAlltrashnoteComponent},
+      {path: 'archive', component:GetAllarchiveComponent}
+    ]
+  }
 ];
 
 @NgModule({

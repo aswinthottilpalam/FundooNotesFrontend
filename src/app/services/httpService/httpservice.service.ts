@@ -18,4 +18,8 @@ export class HttpserviceService {
     return this.httpClient.put(this.baseurl+url, reqData, token && headers)
   }
 
+  getService(url: string, token: boolean = false, headers: any) {
+    return this.httpClient.get(this.baseurl + url,token && headers )
+  }
+
 }

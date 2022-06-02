@@ -1,0 +1,45 @@
+<!-- <div class="takeAnote">
+    <div (click)="hideAndShow()" *ngIf="show || !show">
+        <textarea cols="" rows="" placeholder="Take a note" class="titleInput"></textarea>
+    </div>
+    <div  *ngIf="show">
+        <textarea cols="" rows="" placeholder="description" class="noteDescription"></textarea>
+        
+        <app-icons></app-icons>
+    </div>
+</div> -->
+
+<div fxFlex=100 fxLayout="column" fxLayoutAlign="center center">
+
+    <div class="takeAnote">
+      
+            <div class="titleInputSection"  (click)="hideAndShow()" *ngIf="show || !show">
+                <input placeholder="Take a note .."  [(ngModel)]="title"   class="titleInput">
+                <div class="titleImgSection">
+                    <div *ngIf="titleImgOne">
+                        <a> <img src="../../../assets/tick.svg"> </a>
+                        <a> <img src="../../../assets/pen.svg"> </a>
+                        <a> <img src="../../../assets/image.svg"> </a>
+                    </div>
+                    <span *ngIf="titleImgTwo">
+                        <a> <img src="../../../assets/pin.svg"> </a>
+                    </span>
+                </div>
+            </div>
+
+            <div  *ngIf="show">
+                <div appearance="fill">
+                    <textarea  [(ngModel)]="description" matInput   placeholder="Take a note.." class="noteDescription"></textarea>
+                </div>
+
+                <div style="display: flex;">
+                    <app-icons></app-icons>
+                    <div style="margin-left: auto;">
+                        <button mat-button (click)="onclose()" class="closebutton">Close</button>
+                    </div>
+                </div>
+            </div>
+
+    </div>
+
+</div>

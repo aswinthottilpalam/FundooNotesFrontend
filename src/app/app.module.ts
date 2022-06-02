@@ -10,6 +10,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
+import { MatCardModule } from '@angular/material/card';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -23,6 +25,12 @@ import { ResetPasswordComponent } from './components/reset-password/reset-passwo
 // import { HttpserviceComponent } from './services/httpService/httpservice/httpservice.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { GetallnotesComponent } from './components/getallnotes/getallnotes.component';
+import { CreateNoteComponent } from './components/create-note/create-note.component';
+import { DisplayNotesComponent } from './components/display-notes/display-notes.component';
+import { IconsComponent } from './components/icons/icons.component';
+import { GetAllarchiveComponent } from './components/get-allarchive/get-allarchive.component';
+import { GetAlltrashnoteComponent } from './components/get-alltrashnote/get-alltrashnote.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +40,12 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     ForgotPasswordComponent,
     ResetPasswordComponent,
     DashboardComponent,
+    GetallnotesComponent,
+    CreateNoteComponent,
+    DisplayNotesComponent,
+    IconsComponent,
+    GetAllarchiveComponent,
+    GetAlltrashnoteComponent,
     // HttpserviceComponent
   ],
   imports: [
@@ -49,7 +63,9 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     MatToolbarModule,
     MatIconModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    MatCardModule,
+    MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

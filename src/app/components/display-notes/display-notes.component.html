@@ -1,0 +1,15 @@
+
+    <mat-card *ngFor="let note of NotesArray" class="noteBox">
+        <mat-card-content>
+            <div>
+				{{note.title}}
+
+                <a class="pinimage"> <img src="../../../assets/pin.svg"> </a>
+			</div>
+            <div class="displayDescription">
+				{{note.description}}
+			</div>
+			
+        </mat-card-content>
+        <app-icons></app-icons>
+    </mat-card>
