@@ -21,7 +21,13 @@ export class GetallnotesComponent implements OnInit {
       this.NoteList = response.data;
       console.log(this.NoteList);
       this.NoteList.reverse();
+
+      this.NoteList = this.NoteList.filter((object: any) => {
+        return object.isArchieve === false && object.isTrash === false;
+      } )
+      
     })
+
   }
 
 }

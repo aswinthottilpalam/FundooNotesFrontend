@@ -46,8 +46,37 @@ export class NoteservicesService {
         'Authorization': 'Bearer ' + this.token
       })
     }
-    return this.httpService.putService(`Note/UpdateNote/${noteId}/`, reqData, true, header);
-    
+    return this.httpService.putService(`Note/UpdateNote/${noteId}/`, reqData, true, header); 
+
   }
+
+
+    // Delete note section
+    deleteNote(reqData:any) {
+      console.log(reqData)
+      let header = {
+        headers: new HttpHeaders({
+          'Content-Type': 'application/json-patch+json',
+          'Authorization': 'Bearer ' + this.token
+        })
+      }
+      return this.httpService.putService(`Note/TrashNote/${reqData.noteId}`, reqData, true, header); 
+
+    }
+
+      // Archive note section
+      archiveNote(reqData:any) {
+        console.log(reqData)
+        let header = {
+          headers: new HttpHeaders({
+            'Content-Type': 'application/json-patch+json',
+            'Authorization': 'Bearer ' + this.token
+          })
+        }
+        return this.httpService.putService(`Note/ArchiveNote/${reqData.noteId}`, reqData, true, header); 
+  
+      }
+
+
 
 }
