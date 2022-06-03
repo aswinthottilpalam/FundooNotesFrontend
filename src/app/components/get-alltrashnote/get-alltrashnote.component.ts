@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NoteservicesService } from 'src/app/services/noteService/noteservices.service';
 
 @Component({
   selector: 'app-get-alltrashnote',
@@ -7,16 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GetAlltrashnoteComponent implements OnInit {
 
-  NoteList = []
-  constructor() { }
+  TrashList = []
+  constructor( private note: NoteservicesService) { }
 
   ngOnInit(): void {
     this.getAllTrashNotes()
   }
 
   getAllTrashNotes() {
-    console.log("call the Api here");
-    this.NoteList = [  ]
+    this.note.getallNotes().subscribe((response: any) =>{
+      console.log(response);
+      this.TrashList = response.data;
+      console.log(this.TrashList);
+
+      this.TrashList = this.TrashList.filter((object: any) => {
+        return  object.isTrash === true;
+      } )
+    })
+
   }
 
 }

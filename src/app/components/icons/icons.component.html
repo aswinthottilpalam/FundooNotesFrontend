@@ -2,9 +2,9 @@
     <a><img src="../../../assets/reminder.svg"></a>
     <a> <img src="../../../assets/collaborator.svg"></a>
     <a><img src="../../../assets/background.svg"></a>
-    <a><img src="../../../assets/archive.svg"></a>
+    <a (click)="onArchive()"><img src="../../../assets/archive.svg"></a>
     <a [matMenuTriggerFor]="menu"><img src="../../../assets/threedots.svg"></a>
     <mat-menu #menu="matMenu" id="menuPanel">
-        <button mat-menu-item >Delete</button>
+        <button mat-menu-item (click)="onDelete()" >Delete</button>
     </mat-menu>
 </div>
