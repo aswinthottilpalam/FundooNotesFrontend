@@ -3,5 +3,8 @@
     <a> <img src="../../../assets/collaborator.svg"></a>
     <a><img src="../../../assets/background.svg"></a>
     <a><img src="../../../assets/archive.svg"></a>
-    <a><img src="../../../assets/threedots.svg"></a>
+    <a [matMenuTriggerFor]="menu"><img src="../../../assets/threedots.svg"></a>
+    <mat-menu #menu="matMenu" id="menuPanel">
+        <button mat-menu-item >Delete</button>
+    </mat-menu>
 </div>

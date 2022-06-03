@@ -12,6 +12,9 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
 import {MatGridListModule} from '@angular/material/grid-list';
+import { MatDialogModule } from '@angular/material/dialog';
+import {MatMenuModule} from '@angular/material/menu';
+
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -31,6 +34,7 @@ import { DisplayNotesComponent } from './components/display-notes/display-notes.
 import { IconsComponent } from './components/icons/icons.component';
 import { GetAllarchiveComponent } from './components/get-allarchive/get-allarchive.component';
 import { GetAlltrashnoteComponent } from './components/get-alltrashnote/get-alltrashnote.component';
+import { UpdateComponent } from './components/update/update.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +50,7 @@ import { GetAlltrashnoteComponent } from './components/get-alltrashnote/get-allt
     IconsComponent,
     GetAllarchiveComponent,
     GetAlltrashnoteComponent,
+    UpdateComponent,
     // HttpserviceComponent
   ],
   imports: [
@@ -65,7 +70,9 @@ import { GetAlltrashnoteComponent } from './components/get-alltrashnote/get-allt
     MatSidenavModule,
     MatListModule,
     MatCardModule,
-    MatGridListModule
+    MatGridListModule,
+    MatDialogModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]
