@@ -1,15 +1,18 @@
 
+<div fxLayout="row wrap"  class="displayOneNOte" >
     <mat-card *ngFor="let note of NotesArray" class="noteBox">
         <mat-card-content>
-            <div>
+            <div (click)="openDialog(note)">
 				{{note.title}}
 
                 <a class="pinimage"> <img src="../../../assets/pin.svg"> </a>
 			</div>
-            <div class="displayDescription">
+            <div class="displayDescription" (click)="openDialog(note)">
 				{{note.description}}
 			</div>
 			
         </mat-card-content>
         <app-icons></app-icons>
+        <img src="../../../assets/blacktick.svg" class="blackTickImg">
     </mat-card>
+</div>

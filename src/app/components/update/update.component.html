@@ -1,0 +1,32 @@
+<mat-card class="updateDialogBox">
+    <mat-card-content>
+        <div>
+            <input type="text" [(ngModel)]="title">
+        </div>
+        <div class="displayDescription" >
+            <!-- <input type="text" [(ngModel)]="description"> -->
+            <textarea [(ngModel)]="description"></textarea>
+        </div>
+
+    </mat-card-content>
+
+    <div style="display: flex;">
+        <app-icons></app-icons>
+        <div style="margin-left: auto; margin-top: 10px;">
+            <button mat-button (click)="onClose()" class="closebutton">Close</button>
+        </div>
+    </div>
+</mat-card>
+
+
+
+
+<!-- <div>
+    <div>
+        <input type="text" [(ngModel)]="title">
+    </div>
+    <div>
+        <input type="text" [(ngModel)]="description">
+    </div>
+    <button (click)="onClose()" >CLose</button>
+</div> -->

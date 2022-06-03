@@ -1,19 +1,20 @@
 .noteBox {
-    width         : 250px;
-    min-width     : 250px;
-    min-height    : 125px;
-    padding       : 16px 16px 8px;
-    border        : 1px solid #e0e0e0;
-    border-radius : 10px;
-    border-width  : 1px;
-    margin-bottom : 20px;
+    width  : 250px;
+    min-width : 250px;
+    min-height : 125px;
+    padding : 16px 16px 8px;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    border-width: 1px;
+    margin-bottom: 20px;
     background-color: #fff;
-    margin: 10px 10px;
+    margin: 14px 16px;
     position: relative;
 }
 
 .noteBox:hover{
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;}
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
 
 .displayDescription {
     padding-top: 25px;
@@ -30,4 +31,21 @@
 .pinimage img:hover {
     background-color: rgba(95,99,104,0.157);
     border-radius: 50%;
+}
+
+.displayOneNOte {
+    width: 95%; 
+    margin: auto;
+    margin-top: 20px;
+}
+
+.blackTickImg {
+    position: absolute;
+    top: -4%;
+    left: -3%;
+    opacity: 0;
+    transition: 0.5s ease-in-out;
+}
+.noteBox:hover .blackTickImg {
+    opacity: 1;
 }
