@@ -15,8 +15,10 @@
 .noteIcons {
     padding: 10px 0;
 }
-// #menuPanel {min-height: 40px !important; max-height: 45px !important; height: 40px !important;}
-//  .mat-menu-item {
-//      line-height: 30px !important;
-//      height: 30px !important;
-//  }
+
+.colorBtn {
+    margin: 3px;
+}
+.colorBtn:hover {
+    border: 1px solid #000;
+}

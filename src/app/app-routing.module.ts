@@ -8,19 +8,21 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { GetallnotesComponent } from './components/getallnotes/getallnotes.component';
 import { GetAlltrashnoteComponent } from './components/get-alltrashnote/get-alltrashnote.component';
 import { GetAllarchiveComponent } from './components/get-allarchive/get-allarchive.component';
+import { AuthguardGuard } from './services/authguard/authguard.guard';
 
 const routes: Routes = [
+  {path:'' ,redirectTo:"/login" ,pathMatch:'full'},
   {path: 'login',component:LoginComponent},
   {path: 'registration',component:RegistrationComponent},
   {path: 'forgot-password',component:ForgotPasswordComponent},
   {path: 'reset-password/:token',component:ResetPasswordComponent},
-  {path: 'dashboard',component:DashboardComponent, 
+  {path: 'dashboard',component:DashboardComponent, canActivate:[AuthguardGuard],   
     children: [
       {path: 'notes', component:GetallnotesComponent},
       {path: 'trash', component:GetAlltrashnoteComponent},
       {path: 'archive', component:GetAllarchiveComponent}
     ]
-  }
+  },
 ];
 
 @NgModule({
