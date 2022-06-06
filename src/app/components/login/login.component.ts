@@ -14,10 +14,16 @@ export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
   submitted = false;
   hide : boolean = true;
+  token: any;
+  users = "1"
 
-  constructor(private formBuilder: FormBuilder, private user: UserserviceService, private router: Router) { }
+  constructor(private formBuilder: FormBuilder, private user: UserserviceService, private router: Router) {
+    this.token=localStorage.getItem("token");
+   }
+
 
   ngOnInit() {
+    localStorage.setItem('SeesionUser',this.users) 
     this.loginForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],

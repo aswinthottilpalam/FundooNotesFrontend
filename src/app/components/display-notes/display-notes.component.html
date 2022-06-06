@@ -1,6 +1,6 @@
 
-<div fxLayout="row wrap"  class="displayOneNOte" >
-    <mat-card *ngFor="let note of NotesArray" class="noteBox">
+<div fxLayout="row wrap"  class="displayOneNOte" fxFlex.xs=100  >
+    <mat-card *ngFor="let note of NotesArray" class="noteBox" [style.background]="note.bgColor">
         <mat-card-content>
             <div (click)="openDialog(note)">
 				{{note.title}}
@@ -12,7 +12,7 @@
 			</div>
 			
         </mat-card-content>
-        <app-icons [noteCard]="note" ></app-icons>
+        <app-icons [noteCard]="note" (iconstodisplay)="recievefromiconstodisplaycard($event)" ></app-icons>
         <img src="../../../assets/blacktick.svg" class="blackTickImg">
     </mat-card>
 </div>

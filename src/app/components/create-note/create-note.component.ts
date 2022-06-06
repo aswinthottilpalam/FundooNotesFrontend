@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NoteservicesService } from 'src/app/services/noteService/noteservices.service';
 
@@ -17,6 +17,8 @@ export class CreateNoteComponent implements OnInit {
   description: any;
 
   constructor(private formBuilder: FormBuilder, private note: NoteservicesService) { }
+  @Output() displaytogetallnotes=new EventEmitter<string>();
+
 
   ngOnInit(): void {
 
@@ -41,9 +43,11 @@ export class CreateNoteComponent implements OnInit {
     }
     this.note.createnote(reqData).subscribe((response: any) => {
       console.log(response);
+      this.displaytogetallnotes.emit(response)
     }, error => {
       console.log(error);
     })
+
 
   }
 

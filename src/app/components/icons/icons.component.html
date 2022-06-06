@@ -1,10 +1,35 @@
 <div class="noteIcons">
-    <a><img src="../../../assets/reminder.svg"></a>
-    <a> <img src="../../../assets/collaborator.svg"></a>
-    <a><img src="../../../assets/background.svg"></a>
-    <a (click)="onArchive()"><img src="../../../assets/archive.svg"></a>
-    <a [matMenuTriggerFor]="menu"><img src="../../../assets/threedots.svg"></a>
-    <mat-menu #menu="matMenu" id="menuPanel">
-        <button mat-menu-item (click)="onDelete()" >Delete</button>
+    <a *ngIf=!isDeleted ><img src="../../../assets/reminder.svg"></a>
+    <a *ngIf=!isDeleted > <img src="../../../assets/collaborator.svg"></a>
+
+    <a [matMenuTriggerFor]="color" *ngIf=!isDeleted><img src="../../../assets/background.svg"></a>
+    <mat-menu #color="matMenu">
+        <div fxLayout="row wrap" style="padding-left: 8px;">
+            <div *ngFor="let color of colorarray" class="colorBox">
+                <button class="colors colorBtn" mat-icon-button mat-raised-button [style.background]="color?.Colorcode"
+                    (click)="changeColor(color?.Colorcode)"></button>
+            </div>
+        </div>
     </mat-menu>
+
+
+    <a (click)="onArchive()" *ngIf="!isArchived && !isDeleted" >
+        <img src="../../../assets/archive.svg">
+    </a>
+
+    <a *ngIf='isArchived && !isDeleted' (click)='onUnarchive()'>
+        <img src="../../../assets/unarchive.svg">
+    </a>
+
+    <a [matMenuTriggerFor]="menu" *ngIf=!isDeleted><img src="../../../assets/threedots.svg"></a>
+    <mat-menu #menu="matMenu" id="menuPanel">
+        <button mat-menu-item (click)="onDelete()">Delete</button>
+    </mat-menu>
+
+    <a *ngIf=isDeleted (click)="onRestore()"> <img src="../../../assets/restore.svg"> </a>
+
+    <a *ngIf=isDeleted (click)="deleteForever()" > 
+        <img src="../../../assets/deleteForever.svg">
+    </a>
+
 </div>

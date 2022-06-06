@@ -116,3 +116,9 @@
   .refreshiconsection img{
     opacity: 0.51;
   }
+
+  @media only screen and (max-width: 600px) {
+    .refreshiconsection a, .dpSection .appsIcon {
+       display: none;
+    }
+}
