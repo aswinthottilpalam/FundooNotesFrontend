@@ -22,3 +22,9 @@
 .colorBtn:hover {
     border: 1px solid #000;
 }
+
+@media only screen and (max-width: 600px) {
+    .noteIcons img {
+        margin: 0 5px;
+    }
+}

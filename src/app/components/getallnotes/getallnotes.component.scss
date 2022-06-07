@@ -5,3 +5,9 @@
     overflow: hidden;
     margin-top: 30px;
 }
+
+@media only screen and (max-width: 600px) {
+    .getallDisplayNote{
+        width: 95%;
+    }
+}

@@ -37,6 +37,7 @@ import { IconsComponent } from './components/icons/icons.component';
 import { GetAllarchiveComponent } from './components/get-allarchive/get-allarchive.component';
 import { GetAlltrashnoteComponent } from './components/get-alltrashnote/get-alltrashnote.component';
 import { UpdateComponent } from './components/update/update.component';
+import { FilterPipe } from './pipes/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { UpdateComponent } from './components/update/update.component';
     GetAllarchiveComponent,
     GetAlltrashnoteComponent,
     UpdateComponent,
+    FilterPipe,
     // HttpserviceComponent
   ],
   imports: [

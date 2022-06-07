@@ -17,9 +17,19 @@
       <a>
         <mat-icon class="headerIcon">search</mat-icon>
       </a>
-      <input type="text" placeholder="Search" class="searchbox">
+      <input (keyup)=" searchtitle($event)" type="text" placeholder="Search" class="searchbox">
       <!-- <a ><mat-icon class="closeIcon">close</mat-icon></a> -->
+
+
     </div>
+    <!-- mobile view searchbar -->
+    <li class="mobileSearchbar">
+      <i><mat-icon class="mobileSearchIcon" aria-hidden="true" (click)="onIconToggle()" >search</mat-icon></i>
+      <div class="togglesearch" *ngIf="toggleIconSrch">
+        <input type="text" placeholder="Search..." (keyup)=" searchtitle($event)" />
+      </div>
+    </li>
+    <!-- mobile view searchbar ends -->
 
     <div fxFlex=10 class="refreshiconsection">
       <!-- <a ><mat-icon class="headerIcon refreshIcon greyBg">refresh</mat-icon></a> -->
@@ -40,7 +50,7 @@
         <img src="../../../assets/avatar.jpg">
       </div>
       <mat-menu #menu="matMenu">
-        <button mat-menu-item (click)="OnLogout()" >Logout</button>
+        <button mat-menu-item (click)="OnLogout()">Logout</button>
       </mat-menu>
     </div>
 
@@ -74,3 +84,13 @@
 
   </mat-sidenav-container>
 </div>
+
+
+<!-- <script>
+  $(document).ready(function () {
+    $(".mobileSearchIcon").click(function () {
+      $(".togglesearch").toggle();
+      $("input[type='text']").focus();
+    });
+  });
+</script> -->
