@@ -75,6 +75,7 @@ export class IconsComponent implements OnInit {
     // console.log(reqData);
     this.note.archiveNote(reqData).subscribe((response: any) => {
       console.log(response);
+      this.iconstodisplay.emit(response);
 
       this.snackbar.open('note archived sucessfully', '', {
         duration: 2000,
@@ -140,6 +141,7 @@ export class IconsComponent implements OnInit {
     // console.log(reqData);
     this.note.archiveNote(reqData).subscribe((response: any) => {
       console.log(response);
+      this.iconstodisplay.emit(response);
 
       this.snackbar.open('note Unarchived sucessfully', '', {
         duration: 2000,

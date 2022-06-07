@@ -1,6 +1,6 @@
 
 <div fxLayout="row wrap"  class="displayOneNOte" fxFlex.xs=100  >
-    <mat-card *ngFor="let note of NotesArray" class="noteBox" [style.background]="note.bgColor">
+    <mat-card fxFlex.xs=100 *ngFor="let note of NotesArray | filter:searchword" class="noteBox" [style.background]="note.bgColor">
         <mat-card-content>
             <div (click)="openDialog(note)">
 				{{note.title}}

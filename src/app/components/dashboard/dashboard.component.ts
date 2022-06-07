@@ -3,6 +3,7 @@ import {MediaMatcher} from '@angular/cdk/layout';
 import {ChangeDetectorRef, OnDestroy} from '@angular/core';
 import { Router } from '@angular/router';
 import { MatSnackBar} from '@angular/material/snack-bar';
+import { DataService } from 'src/app/services/dataService/data.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -12,6 +13,11 @@ import { MatSnackBar} from '@angular/material/snack-bar';
 
 
 export class DashboardComponent implements OnDestroy {
+  // filteredString:string = '';
+  message:any;
+  value:any;
+  toggleIconSrch = false;
+
   mobileQuery: MediaQueryList;
   fillerNav = Array.from({length: 50}, (_, i) => `Nav Item ${i + 1}`);
   fillerContent = Array.from({length: 50}, () =>
@@ -22,7 +28,7 @@ export class DashboardComponent implements OnDestroy {
    cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`);
    private _mobileQueryListener: () => void;
 
-  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, private route: Router, private snackBar: MatSnackBar) {
+  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, private route: Router, private snackBar: MatSnackBar, private data:DataService) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
@@ -33,6 +39,17 @@ export class DashboardComponent implements OnDestroy {
   }
 
   ngOnInit(): void {
+    
+  }
+
+  searchtitle(event: any) {
+    console.log("input in search field ===",event.target.value);
+    this.value = event.target.value
+    let Ddata = {
+      type: 'search',
+      data: [this.value]
+    }
+    this.data.changeMessage(Ddata)
   }
 
 
@@ -43,6 +60,11 @@ export class DashboardComponent implements OnDestroy {
       duration: 2000,
     });
   }
+
+  onIconToggle(){
+    this.toggleIconSrch = !this.toggleIconSrch;
+  }
+
 
 
 }
