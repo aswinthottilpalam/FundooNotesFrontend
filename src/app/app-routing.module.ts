@@ -9,6 +9,7 @@ import { GetallnotesComponent } from './components/getallnotes/getallnotes.compo
 import { GetAlltrashnoteComponent } from './components/get-alltrashnote/get-alltrashnote.component';
 import { GetAllarchiveComponent } from './components/get-allarchive/get-allarchive.component';
 import { AuthguardGuard } from './services/authguard/authguard.guard';
+import { LabelComponent } from './components/label/label.component';
 
 const routes: Routes = [
   {path:'' ,redirectTo:"/login" ,pathMatch:'full'},
@@ -20,7 +21,8 @@ const routes: Routes = [
     children: [
       {path: 'notes', component:GetallnotesComponent},
       {path: 'trash', component:GetAlltrashnoteComponent},
-      {path: 'archive', component:GetAllarchiveComponent}
+      {path: 'archive', component:GetAllarchiveComponent},
+      {path: 'label', component:LabelComponent}
     ]
   },
 ];

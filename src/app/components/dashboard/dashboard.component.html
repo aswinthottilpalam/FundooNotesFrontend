@@ -66,7 +66,11 @@
         <a mat-list-item routerLink=".">
           <mat-icon>notifications_none</mat-icon> Reminders
         </a>
-        <a mat-list-item routerLink=".">
+        <div *ngFor="let label of LabelList" class="sideLabel">
+          <img src="../../../assets/labelIcon.svg" >
+          {{label.labelName}}
+        </div>
+        <a mat-list-item (click)="editLabelDialog()">
           <mat-icon>edit</mat-icon> Edit labels
         </a>
         <a mat-list-item routerLink="./archive">

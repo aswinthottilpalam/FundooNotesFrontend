@@ -117,6 +117,17 @@
     opacity: 0.51;
   }
 
+  .sideLabel {
+    padding: 0 16px; 
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    box-sizing: border-box;
+    height: 38px;
+    cursor: pointer;
+  }
+  .sideLabel img {padding-right: 20px;}
+
   // MObile search bar 
   .mobileSearchbar { display: none; margin-left: 100px;}
   .mobileSearchIcon {

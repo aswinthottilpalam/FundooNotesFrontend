@@ -28,7 +28,9 @@ export class IconsComponent implements OnInit {
   { Colorcode: "rgb(204, 255, 144)", name: "lightGreen" },
   { Colorcode: "rgb(167, 255, 235)", name: "aqua" },
   { Colorcode: "rgb(203, 240, 248)", name: "lightBlue" },
-  { Colorcode: "rgb(174, 203, 250)", name: "darkBlue" }];
+  { Colorcode: "rgb(174, 203, 250)", name: "darkBlue" },
+  { Colorcode: "rgb(87, 169, 161)", name: "greenish" },
+  { Colorcode: "rgb(223, 140, 229)", name: "violet" }];
 
 
   ngOnInit(): void {

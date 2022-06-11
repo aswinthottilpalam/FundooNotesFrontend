@@ -1,0 +1,24 @@
+
+
+<div class="editLabels">
+    <h3>Edit Labels</h3>
+    <button mat-icon-button (click)="add=!add">
+        <mat-icon *ngIf="add">close</mat-icon>
+        <mat-icon *ngIf="!add">add_circle_outline</mat-icon>
+    </button>
+    <input matInput placeholder="create new label" [(ngModel)]="LabelName" (click)="inpuTBox()">
+    <button mat-icon-button>
+        <mat-icon *ngIf="add" (click)="addLabel()">done</mat-icon>   
+    </button>
+
+    <div *ngFor="let label of LabelArray">
+        <div class="labelDeleteIcon">
+            <mat-icon>label</mat-icon>
+            <mat-icon>delete</mat-icon>
+        </div>
+        <div class="textarea">
+            {{label.labelName}}
+        </div>
+    </div>
+
+</div>

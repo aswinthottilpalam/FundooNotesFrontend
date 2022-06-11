@@ -43,7 +43,7 @@ export class DisplayNotesComponent implements OnInit {
     console.log("recievedindisplay", $event);
     this.sentmsg = $event
     this.displaytogetallnotes.emit(this.sentmsg)
-  
   }
+
 
 }
