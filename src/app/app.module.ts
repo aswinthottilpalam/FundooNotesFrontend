@@ -38,6 +38,8 @@ import { GetAllarchiveComponent } from './components/get-allarchive/get-allarchi
 import { GetAlltrashnoteComponent } from './components/get-alltrashnote/get-alltrashnote.component';
 import { UpdateComponent } from './components/update/update.component';
 import { FilterPipe } from './pipes/filter.pipe';
+import { LabelComponent } from './components/label/label.component';
+import { GetalllabelsComponent } from './components/getallLabels/getalllabels.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +57,8 @@ import { FilterPipe } from './pipes/filter.pipe';
     GetAlltrashnoteComponent,
     UpdateComponent,
     FilterPipe,
+    LabelComponent,
+    GetalllabelsComponent,
     // HttpserviceComponent
   ],
   imports: [
